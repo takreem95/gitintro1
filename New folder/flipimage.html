@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+<style>
+.flip3D{
+	width:240px;
+	height:200px;
+	margin:10px;
+	float:left;
+}
+.flip3D>.front{
+	position: absolute;
+	-webkit-transform: perspective(600px) rotateY(0deg);
+	background-color:red;
+	width: 240px;
+	height: 200px;
+	border-radius: 7px;
+	transition: transform 0.5s linear 0s;
+	backface-visibility:hidden;
+}
+.flip3D>.back{
+	position:absolute;
+	-webkit-transform:perspective(600px) rotateY(180deg);
+	width:240px;
+	height:200px;
+	border-radius:7px;
+	transition:transform 0.5s linear 0s;
+	backface-visibility:hidden;
+}
+.flip3D:hover>.front{
+	transform:perspective(600px) rotateY(-180deg);
+}
+.flip3D:hover>.back{
+	transform:perspective(600px) rotateY(0deg);
+}
+</style>
+<body>
+<div class="flip3D">
+<div class="back"><img src="C:\Users\MIRZA\Desktop\images (7).jpg" width="240">Box 1 - Back</div>
+<div class="front">Box 1 - Front</div>
+</div>
+</body>
+</html>
